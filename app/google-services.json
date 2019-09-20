@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "136870868786",
+    "firebase_url": "https://review-android.firebaseio.com",
+    "project_id": "review-android",
+    "storage_bucket": "review-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136870868786:android:6fd9dae94fd31bc2e1492b",
+        "android_client_info": {
+          "package_name": "com.example.reviewandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136870868786-fhgfq5lima56c18mnudpu8gg0hptbghr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyoD2lKUkfVIwiJVJeEX3SxhIOqvyKVEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136870868786-fhgfq5lima56c18mnudpu8gg0hptbghr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
