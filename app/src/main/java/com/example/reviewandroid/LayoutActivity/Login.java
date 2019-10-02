@@ -18,12 +18,12 @@ public class Login extends AppCompatActivity {
     }
 
     public void Daftar(View view) {
-        Intent intent = new Intent(Login.this, MainActivity.class);
+        Intent intent = new Intent(Login.this, Register.class);
         startActivity(intent);
     }
 
     public void Login(View view) {
-        Intent intent = new Intent(Login.this,Register.class);
+        Intent intent = new Intent(Login.this,MainActivity.class);
         startActivity(intent);
 
     }

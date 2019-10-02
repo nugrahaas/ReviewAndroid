@@ -6,4 +6,160 @@
     android:layout_height="match_parent"
     tools:context=".LayoutActivity.Register">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#000000">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFA800"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Register"
+                android:id="@+id/tv_login"
+                android:textSize="40dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_below="@id/tv_login"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFA800"
+                android:id="@+id/rl_nama"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_nama"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_toRightOf="@id/tv_nama"
+                    android:id="@+id/et_nama"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="#C4C4C4" />
+            </RelativeLayout>
+            <RelativeLayout
+
+                android:layout_below="@id/rl_nama"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFA800"
+                android:id="@+id/rl_username"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_toRightOf="@id/tv_username"
+                    android:id="@+id/et_username"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="#C4C4C4" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_pass"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFA800"
+                android:layout_below="@id/rl_username"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_password"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_toRightOf="@id/tv_password"
+                    android:id="@+id/et_password"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:background="#C4C4C4" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_below="@id/rl_pass"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/mau_daftar"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="Daftar"
+                    android:layout_toLeftOf="@id/linked_tv_daftar"
+                    android:text="Sudah Punya Akun?"
+                    android:layout_marginRight="15dp"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/linked_tv_daftar"
+                    android:layout_height="wrap_content"
+                    android:onClick="Login"
+                    android:text="Login"
+                    android:textColor="#4284f5"
+                    android:textSize="20dp"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <Button
+                android:layout_below="@id/mau_daftar"
+                android:layout_width="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:onClick="Daftar"
+                android:text="Daftar"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
