@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayoutActivity.Post">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:background="#42464d">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#FFA800">
+
+            <ImageView
+                android:id="@+id/fotopro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/cb100"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/namade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/fotopro"
+                android:layout_marginLeft="20dp"
+                android:textColor="#000000"
+                android:text="Arif Rachmat Darmawan"
+                android:textSize="20dp"
+                android:layout_marginTop="28dp"/>
+            <View
+                android:layout_below="@+id/namade"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="3sp"
+                android:background="#000000"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/cb250"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFA800">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul"
+                android:textSize="25dp"
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Like"
+                android:textSize="25dp"
+                android:layout_marginLeft="100dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desk"
+                android:textSize="25dp"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFA800">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8sp"
+                android:layout_marginTop="10dp"
+                android:background="#000000"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
+
+            <ImageView
+                android:id="@+id/fotpro"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/cb250"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/Nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arif Rachmat D"
+                android:textSize="20dp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/fotpro"
+                android:layout_toEndOf="@+id/fotpro"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/komentar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mantappppp!!!!!"
+                android:textSize="15dp"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/fotpro"
+                android:layout_below="@+id/Nama"
+                android:layout_toEndOf="@+id/fotpro" />
+            <View
+                android:layout_below="@+id/komentar"
+                android:layout_width="match_parent"
+                android:layout_height="0.8sp"
+                android:layout_marginTop="10dp"
+                android:background="#000000"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

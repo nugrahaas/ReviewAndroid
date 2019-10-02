@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayoutActivity.Profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:background="#42464d">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#000000">
+
+            <ImageView
+                android:id="@+id/fotpro"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/cb250"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/Nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arif Rachmat D"
+                android:textSize="30dp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/fotpro"
+                android:layout_toEndOf="@+id/fotpro"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Whatsapp : 082260245744"
+                android:textSize="20dp"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/fotpro"
+                android:layout_below="@+id/Nama"
+                android:layout_toEndOf="@+id/fotpro"
+                android:textColor="#FFFF"
+                android:textStyle="bold"/>
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            android:background="#FFFFFF"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="20dp"
+            app:cardCornerRadius="20dp"
+            android:clickable="true"
+            android:onClick="CekPost"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#FFA800"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/cb250"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CB 125"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="70dp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+        </androidx.cardview.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3sp"
+            android:background="#FFFFFF"/>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
