@@ -3,25 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#69696B"
     android:layout_height="match_parent"
+    android:background="#000"
     tools:context=".MainActivity">
 
-    <SearchView
-        android:id="@+id/sv_main"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_sv_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="Search"
-        android:layout_margin="20dp"
-        android:iconifiedByDefault="false"
-        ></SearchView>
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        app:cardCornerRadius="20dp">
+
+        <SearchView
+            android:id="@+id/sv_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search"></SearchView>
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_oto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sv_main"
-        ></androidx.recyclerview.widget.RecyclerView>
+        android:layout_below="@id/cv_sv_main"></androidx.recyclerview.widget.RecyclerView>
 
 
 </RelativeLayout>

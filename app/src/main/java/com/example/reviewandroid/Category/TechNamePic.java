@@ -1,4 +1,4 @@
-package com.example.reviewandroid;
+package com.example.reviewandroid.Category;
 
 public class TechNamePic {
 

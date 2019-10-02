@@ -4,6 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditProfile">
+    tools:context=".LayoutActivity.EditProfile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:background="#FFA800">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="230dp">
+            <ImageView
+                android:id="@+id/editg"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/cb100"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="50dp"/>
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:text="Pilih Gambar"
+                android:layout_toRightOf="@+id/editg"
+                android:layout_marginTop="100dp"
+                android:layout_marginLeft="25dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:textSize="25dp"
+                android:layout_marginLeft="30dp"
+                android:drawableLeft="@drawable/ic_edit_black_24dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:background="#C4C4C4"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Whatsapp"
+                android:textSize="25dp"
+                android:layout_marginLeft="30dp"
+                android:drawableLeft="@drawable/ic_edit_black_24dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:background="#C4C4C4"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp">
+
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:text="Simpan"
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:text="Batal"
+                android:layout_marginLeft="70dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

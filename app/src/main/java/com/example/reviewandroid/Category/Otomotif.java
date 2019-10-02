@@ -1,11 +1,20 @@
-package com.example.reviewandroid;
+package com.example.reviewandroid.Category;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.reviewandroid.LayoutActivity.Menu;
+import com.example.reviewandroid.LayoutActivity.Post;
+import com.example.reviewandroid.R;
+import com.example.reviewandroid.RecyclerItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +26,10 @@ public class Otomotif extends AppCompatActivity {
     private List<OtomotifNamePic> otomotifList;
     private OtomotifAdapter otomotifAdapter;
 
-    String[] arrayTujuan={
+    String[] arrayTujuan = {
             "Motor", "Mobil", "Bus", "Truk"
     };
-    String[] oto_names= {
+    String[] oto_names = {
             "Motor", "Mobil", "Bus", "Truk"
     };
     int[] oto_pics = {
@@ -38,7 +47,7 @@ public class Otomotif extends AppCompatActivity {
         setContentView(R.layout.activity_otomotif);
 
         mRecyclerView = findViewById(R.id.recycler_view_oto);
-        if (mRecyclerView != null){
+        if (mRecyclerView != null) {
             mRecyclerView.setHasFixedSize(true);
 
         }
@@ -46,9 +55,9 @@ public class Otomotif extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        otomotifList= new ArrayList<>();
+        otomotifList = new ArrayList<>();
 
-        for (int i = 0; i < oto_names.length; i++){
+        for (int i = 0; i < oto_names.length; i++) {
             OtomotifNamePic oto = new OtomotifNamePic(oto_names[i], oto_pics[i]);
             otomotifList.add(oto);
 
@@ -62,19 +71,12 @@ public class Otomotif extends AppCompatActivity {
         mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText( Otomotif.this , "Card at " + position + 1+ " is clicked", Toast.LENGTH_SHORT).show();
-//                for (int i = 0; i<3;i++){
-//                    if (i == 0){
-//                        Intent intent = new Intent(Otomotif.this, Otomotif.class);
-//                        startActivity(intent);
-//                    }else if (i == 1){
-//                        Intent intent = new Intent(Otomotif.this,Tech.class);
-//                        startActivity(intent);
-//                    }else if (i == 2){
-//                        Intent intent = new Intent(Otomotif.this,Dapur.class);
-//                        startActivity(intent);
-//                    }
-//                }
+                Toast.makeText(Otomotif.this, "Card at " + position + 1 + " is clicked", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(Otomotif.this, Menu.class);
+                startActivity(intent);
+
+
             }
         }));
 

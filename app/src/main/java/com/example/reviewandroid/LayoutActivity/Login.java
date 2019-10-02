@@ -1,10 +1,13 @@
-package com.example.reviewandroid;
+package com.example.reviewandroid.LayoutActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.reviewandroid.MainActivity;
+import com.example.reviewandroid.R;
 
 public class Login extends AppCompatActivity {
 
@@ -15,7 +18,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void Daftar(View view) {
-        Intent intent = new Intent(Login.this,MainActivity.class);
+        Intent intent = new Intent(Login.this, MainActivity.class);
         startActivity(intent);
     }
 

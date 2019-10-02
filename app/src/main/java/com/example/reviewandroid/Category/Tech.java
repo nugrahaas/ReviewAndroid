@@ -1,4 +1,4 @@
-package com.example.reviewandroid;
+package com.example.reviewandroid.Category;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.reviewandroid.R;
+import com.example.reviewandroid.RecyclerItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,20 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditProfile"></activity>
-        <activity android:name=".SplashScreen">
+        <activity android:name=".LayoutActivity.Post" />
+        <activity android:name=".LayoutActivity.Profile" />
+        <activity android:name=".LayoutActivity.EditProfile" />
+        <activity android:name=".LayoutActivity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
-        <activity android:name=".Dapur" />
-        <activity android:name=".Tech" />
-        <activity android:name=".Otomotif" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".LayoutActivity.Register" />
+        <activity android:name=".LayoutActivity.Login" />
+        <activity android:name=".LayoutActivity.Menu" />
+        <activity android:name=".Category.Dapur" />
+        <activity android:name=".Category.Tech" />
+        <activity android:name=".Category.Otomotif" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -10,6 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.reviewandroid.Category.Dapur;
+import com.example.reviewandroid.Category.Otomotif;
+import com.example.reviewandroid.Category.Tech;
+import com.example.reviewandroid.LayoutActivity.Profile;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,4 +87,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void CekProfile(View view) {
+        Intent intent = new Intent(MainActivity.this, Profile.class);
+        startActivity(intent);
+    }
 }
