@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.reviewandroid.R;
@@ -20,6 +22,7 @@ public class Dapur extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private List<DapurNamePic> dapurList;
     private DapurAdapter dapurAdapter;
+    private SearchView searchView;
 
     String[] arrayTujuan={
             "Alat Makan", "Alat Masak", "Gas", "Penyimpanan"
@@ -39,6 +42,22 @@ public class Dapur extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dapur);
+
+        searchView = findViewById(R.id.sv_main);
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+//        searchView = getSearchEvent();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                dapurAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
 
         mRecyclerView = findViewById(R.id.recycler_view_dapur);
         if (mRecyclerView != null){

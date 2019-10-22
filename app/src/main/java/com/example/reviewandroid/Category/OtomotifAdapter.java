@@ -5,15 +5,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.reviewandroid.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class OtomotifAdapter extends RecyclerView.Adapter<OtomotifAdapter.ViewHolder> {
+public class OtomotifAdapter extends RecyclerView.Adapter<OtomotifAdapter.ViewHolder> implements Filterable {
     private List<OtomotifNamePic> otomotifList;
+    private List<OtomotifNamePic> otomotifListFull;
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
@@ -31,7 +35,7 @@ public class OtomotifAdapter extends RecyclerView.Adapter<OtomotifAdapter.ViewHo
 
     public OtomotifAdapter(List<OtomotifNamePic> otomotifList){
         this.otomotifList = otomotifList;
-
+        otomotifListFull = new ArrayList<>(otomotifList);
     }
 
     public OtomotifAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -59,5 +63,41 @@ public class OtomotifAdapter extends RecyclerView.Adapter<OtomotifAdapter.ViewHo
         return otomotifList.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return otomotifFilter;
+    }
+
+    private Filter otomotifFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<OtomotifNamePic> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0){
+                filteredList.addAll(otomotifListFull);
+            }else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (OtomotifNamePic item:otomotifListFull) {
+                    if (item.getOtomotif_name().toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
+                    }
+                }
+
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            otomotifList.clear();
+            otomotifList.addAll((List) results.values);
+
+            notifyDataSetChanged();
+        }
+    };
 
 }

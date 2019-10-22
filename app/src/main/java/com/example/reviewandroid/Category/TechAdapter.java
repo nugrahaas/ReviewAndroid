@@ -5,15 +5,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.reviewandroid.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class TechAdapter extends RecyclerView.Adapter<TechAdapter.ViewHolder> {
+public class TechAdapter extends RecyclerView.Adapter<TechAdapter.ViewHolder> implements Filterable {
     private List<TechNamePic> techList;
+    private List<TechNamePic> techListFull;
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
@@ -31,7 +35,7 @@ public class TechAdapter extends RecyclerView.Adapter<TechAdapter.ViewHolder> {
 
     public TechAdapter(List<TechNamePic> techList){
         this.techList = techList;
-
+        techListFull = new ArrayList<>(techList);
     }
 
     public TechAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -59,5 +63,41 @@ public class TechAdapter extends RecyclerView.Adapter<TechAdapter.ViewHolder> {
         return techList.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return techFilter;
+    }
+
+    private Filter techFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<TechNamePic> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0){
+                filteredList.addAll(techListFull);
+            }else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (TechNamePic item:techListFull) {
+                    if (item.getTech_name().toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
+                    }
+                }
+
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            techList.clear();
+            techList.addAll((List) results.values);
+
+            notifyDataSetChanged();
+        }
+    };
 
 }

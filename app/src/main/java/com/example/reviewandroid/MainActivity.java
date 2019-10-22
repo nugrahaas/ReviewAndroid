@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.reviewandroid.Category.Dapur;
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private List<Genre> genreList;
     private GenreAdapter genreAdapter;
-
+    private SearchView searchView;
 
     String[] arrayTujuan = {
             "Otomotif", "Tech", "Dapur"
@@ -41,6 +43,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        searchView = findViewById(R.id.sv_main);
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+//        searchView = getSearchEvent();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                genreAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
         mRecyclerView = findViewById(R.id.recycler_view_genre);
         if (mRecyclerView != null) {
             mRecyclerView.setHasFixedSize(true);

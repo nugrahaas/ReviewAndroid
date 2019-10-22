@@ -5,13 +5,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> {
+public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> implements Filterable {
     private List<Genre> genreList;
+    private List<Genre> genreListFull;
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
@@ -29,7 +34,7 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
 
     public GenreAdapter(List<Genre> genreList){
         this.genreList = genreList;
-
+        genreListFull = new ArrayList<>(genreList);
     }
 
     public GenreAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -57,5 +62,41 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
         return genreList.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return genreFilter;
+    }
+
+    private Filter genreFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<Genre> filteredList = new ArrayList<>();
+
+            if (constraint == null || constraint.length() == 0){
+                filteredList.addAll(genreListFull);
+            }else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+
+                for (Genre item:genreListFull) {
+                    if (item.getGenre_name().toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
+                    }
+                }
+
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            genreList.clear();
+            genreList.addAll((List) results.values);
+
+            notifyDataSetChanged();
+        }
+    };
 
 }
