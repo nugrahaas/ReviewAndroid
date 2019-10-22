@@ -45,32 +45,8 @@
                 android:textStyle="bold" />
 
             <RelativeLayout
+
                 android:layout_below="@id/tv_login"
-                android:layout_margin="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFA800"
-                android:id="@+id/rl_nama"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_nama"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Nama"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:layout_toRightOf="@id/tv_nama"
-                    android:id="@+id/et_nama"
-                    android:layout_width="200dp"
-                    android:layout_height="50dp"
-                    android:background="#C4C4C4" />
-            </RelativeLayout>
-            <RelativeLayout
-
-                android:layout_below="@id/rl_nama"
                 android:layout_margin="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,7 +58,7 @@
                     android:id="@+id/tv_username"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="Username"
+                    android:text="Email"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 
@@ -129,7 +105,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="Daftar"
+                    android:onClick="Login"
                     android:layout_toLeftOf="@id/linked_tv_daftar"
                     android:text="Sudah Punya Akun?"
                     android:layout_marginRight="15dp"
@@ -138,6 +114,7 @@
                 <TextView
                     android:layout_alignParentEnd="true"
                     android:layout_width="wrap_content"
+                    android:layout_marginRight="20dp"
                     android:id="@+id/linked_tv_daftar"
                     android:layout_height="wrap_content"
                     android:onClick="Login"
@@ -149,12 +126,12 @@
             </RelativeLayout>
 
             <Button
+                android:id="@+id/btn_register"
                 android:layout_below="@id/mau_daftar"
                 android:layout_width="200dp"
                 android:layout_centerHorizontal="true"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:onClick="Daftar"
                 android:text="Daftar"
                 android:textSize="20dp"
                 android:textStyle="bold" />

@@ -57,7 +57,7 @@
                     android:id="@+id/tv_username"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="Username"
+                    android:text="Email"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 
@@ -124,12 +124,12 @@
             </RelativeLayout>
 
             <Button
+                android:id="@+id/btn_login"
                 android:layout_below="@id/mau_daftar"
                 android:layout_width="200dp"
                 android:layout_centerHorizontal="true"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:onClick="Login"
                 android:text="Login"
                 android:textSize="20dp"
                 android:textStyle="bold" />
