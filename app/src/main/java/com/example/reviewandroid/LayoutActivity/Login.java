@@ -30,7 +30,7 @@ public class Login extends AppCompatActivity {
     DatabaseReference databaseUser;
     EditText editTextUsername, editTextPass;
     String email_txt,password_txt;
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     Button btn_login;
 
 
@@ -67,7 +67,7 @@ public class Login extends AppCompatActivity {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Intent intent = new Intent(Login.this, MainActivity.class);
                                     startActivity(intent);
-                                    Toast.makeText(Login.this, "Login Berhasil", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(Login.this, "Selamat Datang " + user, Toast.LENGTH_LONG).show();
                                     finish();
                                 } else {
                                     // Jika Login gagal, memberikan pesan
